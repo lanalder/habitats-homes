@@ -32,20 +32,51 @@ a {
   padding: 0.2em 0.5em 0em 0.5em;
 }
 
-.icon-title-row {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.2em 0.5em 0.2em 0.5em;
+.heat-t {
+  position: absolute;
+  top: 36vh;
+  left: 17vw;
+  z-index: 5;
 }
 
-.icon-row {
+.sound-t {
   position: absolute;
+  top: 10vh;
+  left: 46vw;
+}
+
+.light-t {
+  position: absolute;
+  top: 29vh;
+  right: 15vw;
+  z-index: 5;
+}
+
+.heat-i {
+ height: 50vh;
+ width: 28vw;
+ top: -11vh;
+ left: 2vw;
+ position: absolute;
+ z-index: 5;
+}
+
+.sound-i {
+  position: absolute;
+  height: 18vh;
+  left: 38vw;
+  top: 14vh;
+  height: 14vh;
+  width: 33vw;
 }
 
 .light-i {
-  z-index: 10;
+  position: absolute;
+  right: 3vw;
+  height: 38vh;
+  z-index: 5;
+  top: 9vh;
   width: 20vw;
-  height: 10vh;
 }
 
 .rooms {
@@ -53,20 +84,42 @@ a {
   position: relative;
 }
 
-.showing,
-.sound-btn-lounge,
-.heat-btn-lounge {
+.room {
   height: 98%;
   width: inherit;
   position: absolute;
-  left: 0.45em;
+  left: 0.05em;
   bottom: 0.2em;
 }
 
+.room > img {
+  width: inherit;
+  height: inherit;
+}
+
+/*
 .sound-btn-lounge,
 .heat-btn-lounge {
   opacity: 0.63;
+} */
+
+#leftBtn {
+  position: absolute;
+  z-index: 10;
+  height: 4vh;
+  left: 5vw;
+  bottom: 10vh;
 }
+
+#rightBtn {
+  position: absolute;
+  z-index: 10;
+  height: 4vh;
+  right: 5vw;
+  bottom: 10vh;
+}
+
+
 
 .footer {
   height: 5%;
