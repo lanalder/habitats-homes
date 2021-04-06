@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: black;
+}
+
+a {
+  font-size: 17px;
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 0, 0, 0.63);
+  color: black;
+}
+
+.container {
+  max-width: 100%;
+  height: 99.7vh;
+  border: black 1px solid;
+  font-size: 36px;
+  text-align: center;
+  position: relative;
+}
+
+.nav {
+  height: 8%;
+  background-color: black;
+  color: white;
+  display: fixed;
+}
+
+.icon-settings {
+  height: 30%;
+  padding: 0.2em 0.5em 0em 0.5em;
+}
+
+.icon-title-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2em 0.5em 0.2em 0.5em;
+}
+
+.icon-row {
+  position: absolute;
+}
+
+.light-i {
+  z-index: 10;
+  width: 20vw;
+  height: 10vh;
+}
+
+.rooms {
+  height: 56%;
+  position: relative;
+}
+
+.showing,
+.sound-btn-lounge,
+.heat-btn-lounge {
+  height: 98%;
+  width: inherit;
+  position: absolute;
+  left: 0.45em;
+  bottom: 0.2em;
+}
+
+.sound-btn-lounge,
+.heat-btn-lounge {
+  opacity: 0.63;
+}
+
+.footer {
+  height: 5%;
+  background-color: black;
+}
