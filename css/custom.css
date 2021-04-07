@@ -18,6 +18,7 @@ a {
   font-size: 36px;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 .nav {
@@ -32,51 +33,50 @@ a {
   padding: 0.2em 0.5em 0em 0.5em;
 }
 
+.icon-title-row {
+  display: flex;
+  justify-content: space-between;
+
+}
+
 .heat-t {
-  position: absolute;
-  top: 36vh;
-  left: 17vw;
-  z-index: 5;
+  padding-top: 4%;
+  padding-left: 2%;
 }
 
 .sound-t {
-  position: absolute;
-  top: 10vh;
-  left: 46vw;
+  padding-top: 14%;
 }
 
 .light-t {
-  position: absolute;
-  top: 29vh;
-  right: 15vw;
-  z-index: 5;
+  padding-right: 2%;
 }
 
 .heat-i {
- height: 50vh;
- width: 28vw;
- top: -11vh;
- left: 2vw;
+ height: 35vh;
+ width: 45vw;
+ top: 11vh;
+ left: -3vw;
  position: absolute;
- z-index: 5;
+ z-index: -1;
 }
 
 .sound-i {
   position: absolute;
-  height: 18vh;
-  left: 38vw;
-  top: 14vh;
   height: 14vh;
-  width: 33vw;
+  left: 38vw;
+  top: 20vh;
+  width: 30vw;
+  z-index: -1;
 }
 
 .light-i {
   position: absolute;
-  right: 3vw;
-  height: 38vh;
-  z-index: 5;
-  top: 9vh;
-  width: 20vw;
+  right: -12vw;
+  height: 32vh;
+  top: 11.8vh;
+  width: 48vw;
+  z-index: -1;
 }
 
 .rooms {
@@ -87,16 +87,14 @@ a {
 .room > img {
   height: 56vh;
   position: absolute;
-  left: 0.7rem;
+  left: 0.15rem;
   bottom: 0.2em;
+  z-index: -2;
+  width: 98vw;
 }
 
 .hiding {
   display: none;
-}
-
-.img-btn {
-  opacity: 0.7;
 }
 
 #leftBtn {
@@ -115,7 +113,48 @@ a {
   bottom: 10vh;
 }
 
+/* heating page begins */
 
+.heat-bg-img {
+  position: absolute;
+  z-index: -100;
+  opacity: 0.2;
+  left: -5vw;
+  top: 2vh;
+}
+
+/* temp slider begins */
+
+.temp-slide-container {
+  margin-top: 3vh;
+}
+
+.temp-slide-container > span {
+  font-size: 25px;
+}
+
+.temp-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 90vw;
+  background: rgb(255, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.temp-slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #2a2a2a;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/* temp slider ENDS */
+
+/* heating page ENDS */
 
 .footer {
   height: 5%;

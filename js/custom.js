@@ -1,3 +1,5 @@
+// homepage room carousel begins
+
 const prevBtn = document.querySelector('#leftBtn');
 const nextBtn = document.querySelector('#rightBtn');
 
@@ -25,3 +27,5 @@ nextBtn.onclick = function(){
   }
   rooms[counter].classList.toggle('hiding');
 }
+
+// homepage room carousel ENDS

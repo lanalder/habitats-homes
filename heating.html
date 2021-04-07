@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/custom.css">
+  <title>Heating - Habitats</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="heat-bg-img">
+      <img src="img/fire.png" alt="">
+    </div>
+    <!-- nav section begins -->
+    <div class="nav">
+      <div class="title">Habitats</div>
+    </div>
+    <!-- nav section ENDS -->
+
+    <!-- content section begins -->
+    <div class="temp-slide-container">
+      <span>House Temperature On Off</span>
+      <input type="range" min="18" max="35" value="20" class="temp-slider">
+      <div class="temp-value"><p>'°'</p></div>
+    </div>
+    <!-- content section ENDS -->
+  </div>
+
+  <div class="footer">
+
+  </div>
+
+  <script>
+  //internal to html since don't wanna break js from index page
+    var slider = document.querySelector('.temp-slider');
+    var output = document.querySelector('.temp-value');
+    output.innerHTML = slider.value +'°';
+
+    slider.oninput = function() {
+      output.innerHTML = this.value +'°';
+    }
+  </script>
+</body>
+
+</html>
