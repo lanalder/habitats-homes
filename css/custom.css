@@ -92,9 +92,8 @@ a {
   bottom: 0.2em;
 }
 
-.room > img {
-  width: inherit;
-  height: inherit;
+.hiding {
+  display: none;
 }
 
 /*
