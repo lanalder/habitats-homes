@@ -7,7 +7,7 @@ const length = rooms.length;
 let counter = 0;
 
 prevBtn.onclick = function(){
-  rooms[counter].classList.toggle('hiding');
+  // rooms[counter].classList.toggle('hiding');
   if (counter === 0){
     counter = length - 1;
   } else {
@@ -17,7 +17,7 @@ prevBtn.onclick = function(){
 }
 
 nextBtn.onclick = function(){
-  rooms[counter].classList.toggle('hiding');
+  // rooms[counter].classList.toggle('hiding');
   if (counter === length - 1){
     counter = 0;
   } else {

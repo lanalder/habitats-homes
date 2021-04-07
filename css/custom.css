@@ -84,11 +84,10 @@ a {
   position: relative;
 }
 
-.room {
-  height: 98%;
-  width: inherit;
+.room > img {
+  height: 56vh;
   position: absolute;
-  left: 0.05em;
+  left: 0.7rem;
   bottom: 0.2em;
 }
 
@@ -96,11 +95,9 @@ a {
   display: none;
 }
 
-/*
-.sound-btn-lounge,
-.heat-btn-lounge {
-  opacity: 0.63;
-} */
+.img-btn {
+  opacity: 0.7;
+}
 
 #leftBtn {
   position: absolute;
