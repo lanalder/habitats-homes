@@ -22,13 +22,28 @@
     <!-- nav section ENDS -->
 
     <!-- content section begins -->
+
     <div class="temp-slide-container">
       <span>House Temperature</span>
       <input type="range" min="18" max="35" value="20" class="temp-slider">
       <div class="temp-value"><p>'°'</p></div>
+      <!-- a child div instead of sibling so to make the most of event bubbling for js -->
+      <div class="house-heat-btn">
+        <img class="onBtn" src="img/onBtn.png" alt="">
+        <img class="hiding offBtn" src="img/offBtn.png" alt="">
+      </div>
     </div>
-    <img class="house-heat-btn" src="img/onBtn.png" alt="">
-    <img class="house-heat-btn hiding" src="img/offBtn.png" alt="">
+
+    <div class="heat-room-section">
+      <div class="heat-br">
+        <img src="img/heat-btn-br.png" alt="">
+      </div>
+      <div class="heat-lounge">
+        <img src="img/heat-btn-lounge.png" alt="">
+      </div>
+    </div>
+
+
     <!-- content section ENDS -->
   </div>
 
@@ -38,19 +53,43 @@
 
   <script>
   //internal to html since don't wanna break js from index page
-    var slider = document.querySelector('.temp-slider');
-    var output = document.querySelector('.temp-value');
+    const slider = document.querySelector('.temp-slider');
+    const output = document.querySelector('.temp-value');
     output.innerHTML = slider.value +'°';
 
     slider.oninput = function() {
       output.innerHTML = this.value +'°';
     }
 
-    const houseBtn = document.querySelectorAll('.house-heat-btn');
+    const houseBtn = document.querySelector('.house-heat-btn');
+    const onBtn = document.querySelector('.onBtn');
+    // const offBtn = document.querySelector('#offBtn');
+
+    let i;
 
     houseBtn.onclick = function(e){
-      this.classList.toggle('hiding');
+      for (i=0; i < houseBtn.childElementCount; i++){
+        //conditional toggles display: none for both children when either is clicked:
+        //for every child, and it just keeps looping through them,
+        //when the first (the on button) is clicked and obvs isn't hidden,
+        //it hides it (via the else statement), and then the second child (the off button)
+        //becomes the value for i, and since that is being hidden,
+        //it shows it (via the if statement), and so on ad infinitum
+        if (houseBtn.children[i].classList.contains('hiding')){
+          houseBtn.children[i].classList.toggle('hiding');
+        } else {
+          houseBtn.children[i].classList.toggle('hiding');
+        }
+      }
+      //this conditional changes slider colour when heating is on / off
+      if (onBtn.classList.contains('hiding')){
+        slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
+      } else {
+        slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
+      }
     }
+
+
   </script>
 </body>
 

@@ -123,10 +123,16 @@ a {
   top: 2vh;
 }
 
+.house-heat-btn:hover {
+  cursor: pointer;
+}
+
 /* temp slider begins */
 
 .temp-slide-container {
   margin-top: 3vh;
+  position: absolute;
+  right: -5vw;
 }
 
 .temp-slide-container > span {
@@ -137,9 +143,9 @@ a {
   -webkit-appearance: none;
   appearance: none;
   outline: none;
-  width: 90vw;
+  width: 70vw;
   background: rgb(255, 0, 0, 0.4);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .temp-slider::-moz-range-thumb {
@@ -149,22 +155,17 @@ a {
   height: 30px;
   background: #2a2a2a;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 5px;
 }
 
 /* temp slider ENDS */
 
 .house-heat-btn {
   position: absolute;
-  left: 8vw;
-  top: 20vh;
+  left: 9vw;
+  top: 9vh;
+  height: 2px;
 }
-
-.house-heat-btn:hover {
-  cursor: pointer;
-}
-
-
 
 /* heating page ENDS */
 
