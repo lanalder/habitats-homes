@@ -154,6 +154,18 @@ a {
 
 /* temp slider ENDS */
 
+.house-heat-btn {
+  position: absolute;
+  left: 8vw;
+  top: 20vh;
+}
+
+.house-heat-btn:hover {
+  cursor: pointer;
+}
+
+
+
 /* heating page ENDS */
 
 .footer {

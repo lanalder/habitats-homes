@@ -23,10 +23,12 @@
 
     <!-- content section begins -->
     <div class="temp-slide-container">
-      <span>House Temperature On Off</span>
+      <span>House Temperature</span>
       <input type="range" min="18" max="35" value="20" class="temp-slider">
       <div class="temp-value"><p>'°'</p></div>
     </div>
+    <img class="house-heat-btn" src="img/onBtn.png" alt="">
+    <img class="house-heat-btn hiding" src="img/offBtn.png" alt="">
     <!-- content section ENDS -->
   </div>
 
@@ -42,6 +44,12 @@
 
     slider.oninput = function() {
       output.innerHTML = this.value +'°';
+    }
+
+    const houseBtn = document.querySelectorAll('.house-heat-btn');
+
+    houseBtn.onclick = function(e){
+      this.classList.toggle('hiding');
     }
   </script>
 </body>
