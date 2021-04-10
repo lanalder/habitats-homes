@@ -5,7 +5,7 @@ body {
 }
 
 a {
-  font-size: 25px;
+  font-size: 23px;
   text-decoration: underline;
   text-decoration-color: rgb(255, 0, 0, 0.8);
   color: black;
@@ -25,12 +25,18 @@ span {
   overflow: hidden;
 }
 
+/* nav section begins */
+
 .nav {
   height: 8%;
   background-color: black;
   color: white;
   display: fixed;
 }
+
+/* nav section ENDS */
+
+/* individual sound heat light pages begins */
 
 .icon-settings {
   height: 30%;
@@ -40,20 +46,7 @@ span {
 .icon-title-row {
   display: flex;
   justify-content: space-between;
-
-}
-
-.heat-t {
-  padding-top: 4%;
-  padding-left: 2%;
-}
-
-.sound-t {
-  padding-top: 14%;
-}
-
-.light-t {
-  padding-right: 2%;
+  align-items: center;
 }
 
 .heat-i {
@@ -69,7 +62,7 @@ span {
   position: absolute;
   height: 14vh;
   left: 38vw;
-  top: 20vh;
+  top: 15vh;
   width: 30vw;
   z-index: -1;
 }
@@ -77,10 +70,20 @@ span {
 .light-i {
   position: absolute;
   right: -12vw;
-  height: 34vh;
-  top: 11.8vh;
+  height: 32vh;
+  top: 14vh;
   width: 48vw;
   z-index: -1;
+}
+
+/* individual sound heat light pages ENDS */
+
+/* room area begins */
+
+.room-titles {
+  position: absolute;
+  left: 39vw;
+  top: 29vh;
 }
 
 .rooms {
@@ -174,6 +177,25 @@ span {
   cursor: pointer;
 }
 
+/* room area ENDS */
+
+/* footer section begins */
+
+.footer {
+  height: 5%;
+  background-color: black;
+}
+
+.footer > span {
+  color: white;
+  float: left;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+/* footer section ENDS */
+
+/* ------------------------ */
 /* heating page begins */
 
 .heat-bg-img > img {
@@ -237,7 +259,7 @@ span {
 
 /* temp slider ENDS */
 
-.room-titles {
+.heat-room-titles {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -280,8 +302,3 @@ span {
 }
 
 /* heating page ENDS */
-
-.footer {
-  height: 5%;
-  background-color: black;
-}
