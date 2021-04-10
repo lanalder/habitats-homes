@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
   <title>Heating - Habitats</title>
 </head>
@@ -22,25 +22,35 @@
     <!-- nav section ENDS -->
 
     <!-- content section begins -->
-
-    <div class="temp-slide-container">
-      <span>House Temperature</span>
-      <input type="range" min="18" max="35" value="20" class="temp-slider">
-      <div class="temp-value"><p>'°'</p></div>
-      <!-- a child div instead of sibling so to make the most of event bubbling for js -->
+    <div class="house-heat">
       <div class="house-heat-btn">
-        <img class="onBtn" src="img/onBtn.png" alt="">
-        <img class="hiding offBtn" src="img/offBtn.png" alt="">
+        <img class="onBtn" src="img/btns/onBtn.png" alt="">
+        <img class="hiding offBtn" src="img/btns/offBtn.png" alt="">
+      </div>
+      <div class="temp-slide-container">
+        <span>House Temperature </span>
+        <input type="range" min="18" max="35" value="20" class="temp-slider">
+        <div class="temp-value"><p>'°'</p></div>
       </div>
     </div>
 
-    <div class="heat-room-section">
-      <div class="heat-br">
-        <img src="img/heat-btn-br.png" alt="">
+    <div class="room-heat">
+      <div class="room-titles">
+        <span>Lounge</span>
+        <span>Bedroom</span>
       </div>
-      <div class="heat-lounge">
-        <img src="img/heat-btn-lounge.png" alt="">
+      <div class="room-btns">
+        <div class="lounge-btns">
+          <img class="onBtn hiding" src="img/btns/onBtn.png" alt="">
+          <img class="offBtn" src="img/btns/offBtn.png" alt="">
+        </div>
+        <div class="br-btns">
+          <img class="onBtn" src="img/btns/onBtn.png" alt="">
+          <img class="offBtn hiding" src="img/btns/offBtn.png" alt="">
+        </div>
       </div>
+      <img class="lounge-heat" src="img/heating-page/lounge.png" alt="">
+      <img class="br-heat" src="img/heating-page/bedroom.png" alt="">
     </div>
 
 
@@ -63,31 +73,40 @@
 
     const houseBtn = document.querySelector('.house-heat-btn');
     const onBtn = document.querySelector('.onBtn');
-    // const offBtn = document.querySelector('#offBtn');
 
     let i;
 
-    houseBtn.onclick = function(e){
+    houseBtn.onclick = function(){
       for (i=0; i < houseBtn.childElementCount; i++){
-        //conditional toggles display: none for both children when either is clicked:
-        //for every child, and it just keeps looping through them,
-        //when the first (the on button) is clicked and obvs isn't hidden,
-        //it hides it (via the else statement), and then the second child (the off button)
-        //becomes the value for i, and since that is being hidden,
-        //it shows it (via the if statement), and so on ad infinitum
-        if (houseBtn.children[i].classList.contains('hiding')){
-          houseBtn.children[i].classList.toggle('hiding');
-        } else {
-          houseBtn.children[i].classList.toggle('hiding');
-        }
+        houseBtn.children[i].classList.toggle('hiding');
       }
-      //this conditional changes slider colour when heating is on / off
+      //changes slider colour when heating is on / off
       if (onBtn.classList.contains('hiding')){
         slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
       } else {
         slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
       }
     }
+
+    const loungeBtn = document.querySelector('.lounge-btns');
+    const brBtn = document.querySelector('.br-btns');
+
+    const lounge = document.querySelector('.lounge-heat');
+    const br = document.querySelector('.br-heat');
+
+    loungeBtn.onclick = function(){
+      for (i=0; i < loungeBtn.childElementCount; i++){
+        loungeBtn.children[i].classList.toggle('hiding');
+      }
+    }
+
+    brBtn.onclick = function(){
+      for (i=0; i < brBtn.childElementCount; i++){
+        brBtn.children[i].classList.toggle('hiding');
+      }
+    }
+
+
 
 
   </script>

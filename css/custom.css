@@ -1,14 +1,18 @@
 body {
   margin: 0;
-  font-family: 'Playfair Display', serif;
-  color: black;
+    font-family: 'Slabo 27px', serif;
+    color: black;
 }
 
 a {
-  font-size: 17px;
+  font-size: 25px;
   text-decoration: underline;
-  text-decoration-color: rgb(255, 0, 0, 0.63);
+  text-decoration-color: rgb(255, 0, 0, 0.8);
   color: black;
+}
+
+span {
+  font-size: 25px;
 }
 
 .container {
@@ -73,7 +77,7 @@ a {
 .light-i {
   position: absolute;
   right: -12vw;
-  height: 32vh;
+  height: 34vh;
   top: 11.8vh;
   width: 48vw;
   z-index: -1;
@@ -93,6 +97,60 @@ a {
   width: 98vw;
 }
 
+.rooms .img-btn {
+  cursor: pointer;
+  z-index: 5;
+}
+
+.bedroom .heat-btn-br,
+.bedroom .light-btn-br,
+.kitchen .sound-btn-kitchen,
+.kitchen .light-btn-kitchen {
+  opacity: 0.63;
+}
+
+.lounge .sound-btn-lounge {
+  height: 11vh;
+  width: 20vw;
+  top: 27.8vh;
+  left: 6vw;
+}
+
+.lounge .heat-btn-lounge {
+  height: 32.5vh;
+  width: 20.5vw;
+  top: 2vh;
+  left: 26vw;
+}
+
+.bedroom .heat-btn-br {
+  height: 14vh;
+  width: 18vw;
+  top: 18.5vh;
+  left: 58vw;
+}
+
+.bedroom .light-btn-br {
+  height: 25vh;
+  width: 12vw;
+  top: 14.5vh;
+  left: 80vw;
+}
+
+.kitchen .sound-btn-kitchen {
+  height: 7.5vh;
+  width: 9vw;
+  top: 26.3vh;
+  left: 12.5vw;
+}
+
+.kitchen .light-btn-kitchen {
+  height: 14vh;
+  width: 14vw;
+  top: 2vh;
+  left: 29vw;
+}
+
 .hiding {
   display: none;
 }
@@ -103,6 +161,8 @@ a {
   height: 4vh;
   left: 5vw;
   bottom: 10vh;
+  cursor: pointer;
+
 }
 
 #rightBtn {
@@ -111,16 +171,29 @@ a {
   height: 4vh;
   right: 5vw;
   bottom: 10vh;
+  cursor: pointer;
 }
 
 /* heating page begins */
 
-.heat-bg-img {
+.heat-bg-img > img {
   position: absolute;
   z-index: -100;
-  opacity: 0.2;
-  left: -5vw;
-  top: 2vh;
+  opacity: 0.1;
+  left: 18vw;
+  top: -1vh;
+  height: 65vh;
+}
+
+.house-heat {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2vh;
+  margin-left: 2.5vh;
+}
+
+.house-heat-btn > img {
+  height: 27vh;
 }
 
 .house-heat-btn:hover {
@@ -130,13 +203,13 @@ a {
 /* temp slider begins */
 
 .temp-slide-container {
-  margin-top: 3vh;
-  position: absolute;
-  right: -5vw;
+  margin-top: 0.9vh;
+  text-align: left;
 }
 
 .temp-slide-container > span {
-  font-size: 25px;
+  font-size: 23px;
+  padding-left: 3vw;
 }
 
 .temp-slider {
@@ -158,13 +231,52 @@ a {
   border-radius: 5px;
 }
 
+.temp-value {
+  text-align: center;
+}
+
 /* temp slider ENDS */
 
-.house-heat-btn {
+.room-titles {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.lounge-heat {
   position: absolute;
-  left: 9vw;
-  top: 9vh;
-  height: 2px;
+  left: -65vw;
+  height: 65vh;
+  bottom: -10vh;
+  z-index: -50;
+}
+
+.room-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lounge-btns > img {
+  height: 16vh;
+  padding-left: 30vw;
+  margin-top: -10vh;
+  cursor: pointer;
+}
+
+.br-btns > img {
+  height: 16vh;
+  padding-right: 32vw;
+  margin-top: -10vh;
+  cursor: pointer;
+
+}
+
+.br-heat {
+  position: absolute;
+  right: -65vw;
+  height: 63vh;
+  bottom: -10vh;
+  z-index: -50;
 }
 
 /* heating page ENDS */
