@@ -1,18 +1,18 @@
 body {
   margin: 0;
-    font-family: 'Slabo 27px', serif;
-    color: black;
+  font-family: 'Slabo 27px', serif;
+  color: black;
 }
 
 a {
-  font-size: 23px;
+  font-size: 25px;
   text-decoration: underline;
   text-decoration-color: rgb(255, 0, 0, 0.8);
   color: black;
 }
 
 span {
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .container {
@@ -31,12 +31,23 @@ span {
   height: 8%;
   background-color: black;
   color: white;
-  display: fixed;
+}
+
+.logo {
+  height: 11vw;
+  width: 110px;
+  vertical-align: top;
+}
+
+.nav span {
+  font-size: 30px;
+  /* vertical-align: top; */
+  margin-top: 20px;
 }
 
 /* nav section ENDS */
 
-/* individual sound heat light pages begins */
+/* sound heat light settings begins */
 
 .icon-settings {
   height: 30%;
@@ -76,7 +87,7 @@ span {
   z-index: -1;
 }
 
-/* individual sound heat light pages ENDS */
+/* sound heat light settings ENDS */
 
 /* room area begins */
 
@@ -186,11 +197,19 @@ span {
   background-color: black;
 }
 
-.footer > span {
+.footer .footer-text {
   color: white;
   float: left;
   font-size: 20px;
   padding-left: 10px;
+}
+
+.footer-btn {
+  width: 30px;
+  transform: rotate(90deg);
+  position: absolute;
+  bottom: -3.2vh;
+  right: 8vw;
 }
 
 /* footer section ENDS */
@@ -265,14 +284,6 @@ span {
   padding: 1rem;
 }
 
-.lounge-heat {
-  position: absolute;
-  left: -65vw;
-  height: 65vh;
-  bottom: -10vh;
-  z-index: -50;
-}
-
 .room-btns {
   display: flex;
   justify-content: space-between;
@@ -295,10 +306,59 @@ span {
 
 .br-heat {
   position: absolute;
-  right: -65vw;
+  right: -68vw;
   height: 63vh;
   bottom: -10vh;
   z-index: -50;
 }
 
+.lounge-heat {
+  position: absolute;
+  left: -68vw;
+  height: 65vh;
+  bottom: -10vh;
+  z-index: -50;
+}
+
 /* heating page ENDS */
+
+/* ------------------------- */
+/* lighting page begins */
+
+.light-bg-img > img {
+  position: absolute;
+  z-index: -100;
+  opacity: 0.1;
+  left: 18vw;
+  top: 8vh;
+  height: 90vh;
+}
+
+.k-light {
+  position: absolute;
+  top: 7vh;
+  height: 29vh;
+  left: 23vw;
+}
+
+.k-light-red {
+  position: absolute;
+  top: 7vh;
+  height: 29vh;
+  left: 19.8vw;
+  opacity: 0.7;
+}
+
+.br-light {
+  position: absolute;
+  left: 1vw;
+  bottom: 0.5vh;
+  height: 50vh;
+}
+
+.br-light-red {
+  position: absolute;
+  left: 0.2vw;
+  bottom: 0.3vh;
+  height: 50.5vh;
+}
