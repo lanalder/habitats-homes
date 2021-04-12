@@ -53,23 +53,65 @@ var btnState = {
   index: 0,
   noClick: 0,
   // indexOld: [{0: false}, {1: false}, {2: false}, {3: false}, {4: false}, {5: false}]
-  indexOld: [0, 1, 2, 3, 4, 5],
+  indexOld: []
 }
 
-redBtns.forEach(function(i){
-  i.addEventListener('click', function(){
-    btnState.noClick++;
-    btnState.index = a.indexOf(i);
-    i.classList.toggle('hiding');
-    btnState.indexOld[btnState.index] = true;
-    if (btnState.noClick > 1){
-      for (let k = 0; k < btnState.indexOld.length; k++){
-        a[btnState.indexOld[k]].classList.remove('hiding');
-        i.classList.toggle('hiding');
-      }
+var w = 0;
+
+
+function first(){
+  for (let i = 0; i < redBtns.length; i ++){
+    redBtns[i].onclick = function(){
+      btnState.index = redBtns[i];
+      btnState.indexOld.push(btnState.index);
+      var t = a.indexOf(btnState.indexOld[0]); //finds corresponding footer text for clicked img via indices
+      f[t].classList.remove('hiding');
+      btnState.noClick++;
+      click(t);
     }
-  });
-});
+  }
+}
+
+
+first();
+
+function click(t){
+  if (btnState.noClick > 1){
+    console.log(f[t]);
+    f[t].classList.add('hiding');
+    console.log(btnState.index);
+    w++;
+    removeOld(w);
+    btnState.index.classList.remove('hiding');
+    btnState.noClick = 0;
+  }
+}
+
+function removeOld(w){
+  btnState.indexOld.reverse(); //if not reversed, the variable the splice method takes below can be equal to or greater than the starting position (resulting in the entire array being deleted), and since we need w back at 0 so that the array only deletes an element one at a time, it was easier to just do it this way
+  btnState.indexOld.splice(1, w);
+  console.log(btnState.indexOld);
+  w--;
+}
+
+
+//
+// redBtns.forEach(function(i){
+//   i.addEventListener('click', function(){
+//     btnState.noClick++;
+//     btnState.index = a.indexOf(i);
+//     i.classList.toggle('hiding');
+//     btnState.indexOld[btnState.index] = true;
+//     if (btnState.noClick > 1){
+//       for (let k = 0; k < btnState.indexOld.length; k++){
+//         a[btnState.indexOld[k]].classList.remove('hiding');
+//         i.classList.toggle('hiding');
+//       }
+//     }
+//   });
+// });
+
+
 
 // redBtns.forEach(function(i){
 //   i.addEventListener('click', function(){
