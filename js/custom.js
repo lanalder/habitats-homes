@@ -6,6 +6,7 @@ const rooms = document.querySelectorAll('.room');
 const redBtns = document.querySelectorAll('.img-btn');
 const length = rooms.length;
 const footerText = document.querySelectorAll('.footer-text');
+const switches = document.querySelectorAll('.footer-btn');
 
 let counter = 0;
 var a = Array.from(redBtns);
@@ -23,7 +24,6 @@ var btnState = {
 function first(){ //sets up click events for all the red buttons
   for (let i = 0; i < redBtns.length; i ++){
     redBtns[i].onclick = function(){
-      console.dir(btnState);
       if (btnState.newEl != null){
         f[btnState.newEl].classList.add('hiding');
       }
@@ -52,7 +52,12 @@ function click(){ //allows us to reuse click listener loop in first function whi
   }
 }
 
-
+for (let p = 0; p < switches.length; p++){
+  switches[p].onclick = function(){
+    switches[p].children[0].classList.toggle('hiding');
+    switches[p].children[1].classList.toggle('hiding');
+  }
+}
 
 prevBtn.onclick = function(){
   rooms[counter].classList.toggle('hiding');

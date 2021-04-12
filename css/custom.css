@@ -204,7 +204,7 @@ span {
   padding-left: 10px;
 }
 
-.footer-btn {
+.footer-btn > img {
   width: 30px;
   transform: rotate(90deg);
   position: absolute;
