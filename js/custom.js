@@ -10,56 +10,143 @@ const footerText = document.querySelectorAll('.footer-text');
 
 let counter = 0;
 // let i;
-var noClick = 0;
+// var noClick = 0;
 var a = Array.from(redBtns);
 var f = Array.from(footerText);
 // let t;
 
 //
-// for (let i=0; i < redBtns.length; i++){
-//   (function(i){
-//     redBtns[i].onclick = function(){
-//       return function(){
-//         const t = a.indexOf(redBtns[i]);
-//         console.log(t);
-//       };
-//     };
-//   })(i);
-// }
-
-// for (var i=0; i < redBtns.length; i++){
-//   redBtns[i].onclick = function(){
-//     t = a.indexOf(redBtns[i]);
-//   };
+// var appState = {
+//   start: false,
+//   startStereo: false,
+//   heater: false
+// };
+//
+// appState.start = true;
+//
+//
+// appState.heater = 'trueForSure';
+//
+// if (appState.heater === 'trueForSure') {
+//
 // }
 //
-// for (var b= 0; b < redBtns.length; b++){
-//   redBtns[b]();
-// }
+// var btnState = {
+//   setting: false,
+//   show: false,
+//   index: 0
+// };
+//
+// redBtns.forEach(function(i){
+//   i.addEventListener('click', function(){
+//     btnState.show = true;
+//     btnState.setting = i;
+//     if (btnState.show === true){
+//       btnState.index = a.indexOf(btnState.setting);
+//       return(btnState.index);
+//     }
+//   });
+// });
 
-let t;
-var tch;
 
-// for (var i=0; i < redBtns.length; i++){
-//   redBtns[i].onclick = function(e){
-//     return function(e){
-//       t = a.indexOf(e.currentTarget);
-//     };
-//   }(t);
-// }
-
-console.log(tch);
-
-
-for (var i=0; i < redBtns.length; i++){
-  redBtns[i].addEventListener('click', function(e){
-    var tch = function(e){
-      return function(e){
-        t = a.indexOf(e.currentTarget);
-      };
-    }(t);
-  })
+var btnState = {
+  index: 0,
+  noClick: 0,
+  // indexOld: [{0: false}, {1: false}, {2: false}, {3: false}, {4: false}, {5: false}]
+  indexOld: [0, 1, 2, 3, 4, 5],
 }
+
+redBtns.forEach(function(i){
+  i.addEventListener('click', function(){
+    btnState.noClick++;
+    btnState.index = a.indexOf(i);
+    i.classList.toggle('hiding');
+    btnState.indexOld[btnState.index] = true;
+    if (btnState.noClick > 1){
+      for (let k = 0; k < btnState.indexOld.length; k++){
+        a[btnState.indexOld[k]].classList.remove('hiding');
+        i.classList.toggle('hiding');
+      }
+    }
+  });
+});
+
+// redBtns.forEach(function(i){
+//   i.addEventListener('click', function(){
+//     i.classList.add('hiding');
+//     btnState.noClick++;
+//     if (btnState.noClick > 1){
+//       i.classList.remove('hiding');
+//     }
+//   });
+// });
+
+
+
+//
+// if (i === a[0]){
+//   btnState.indexOld = 0;
+// } else if (i === a[1]){
+//   btnState.indexOld = 1;
+// } else if (i === a[2]){
+//   btnState.indexOld = 2;
+// } else if (i === a[3]){
+//   btnState.indexOld = 3;
+// } else if (i === a[4]){
+//   btnState.indexOld = 4;
+// } else {
+//   btnState.indexOld = 5;
+// }
+
+//
+// redBtns.forEach(function(i){
+//   i.addEventListener('click', function(){
+//     btnState.show = true;
+//     btnState.noClick++;
+//     if (i === 0 || 1){
+//       btnState.l = true;
+//     } else if (i === 2 || 3){
+//       btnState.br = true;
+//     } else {
+//       btnState.k = true;
+//     }
+//     if (btnState.noClick > 1){
+//       console.log(btnState);
+//     }
+//   });
+// });
+
+//
+// redBtns.forEach(function(i){
+//   i.addEventListener('click', function(){
+//     btnState.show = true;
+//     btnState.noClick++;
+//     if (i === 0 || 1){
+//       btnState.l = true;
+//     } else if (i === 2 || 3){
+//       btnState.br = true;
+//     } else {
+//       btnState.k = true;
+//     }
+//     if (btnState.noClick > 1){
+//       console.log(btnState);
+//     }
+//   });
+// });
+
+
+// redBtns.forEach(function(i){
+//   i.addEventListener('click', function(){
+//     return setBtns(i);
+//   });
+// });
+//
+// function setBtns(i){
+//   (function(t){
+//     t = a.indexOf(i);
+//     console.log(t);
+//   });
+// }
 
 // function setBtn(i){
 //   return function(){
@@ -137,7 +224,8 @@ for (var i=0; i < redBtns.length; i++){
 //     return;
 //   }
 // }
-
+// let i;
+//
 // for (i=0; i < redBtns.length; i++){
 //   redBtns[i].onclick = function(e, noClick++){
 //     let a = Array.from(redBtns);
