@@ -10,10 +10,50 @@
   <title>Sound - Habitats</title>
 </head>
 <body>
-  <div class="nav">
-    <img class="logo" src="img/logo.png" alt="">
-    <span>Habitats</span>
+  <div class="container">
+    <div class="nav">
+      <img class="logo" src="img/logo.png" alt="">
+      <span>Habitats</span>
+    </div>
+    <div class="container-sound">
+      <div class="sound-room">
+        <span>Kitchen</span>
+        <span>Lounge</span>
+      </div>
+      <img class="k-sound-img" src="img/sound-page/k-sound.png" alt="">
+      <img class="l-sound-img" src="img/sound-page/l-sound.png" alt="">
+      <div class="sound-btns">
+        <div class="l-sound-btn">
+          <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="">
+          <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="">
+        </div>
+        <div class="k-sound-btn">
+          <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="">
+          <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="">
+        </div>
+      </div>
+      <iframe src="https://open.spotify.com/embed/playlist/3fDRPfz8cqdS8zNSNdop1B" class= "spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
   </div>
-  <iframe src="https://open.spotify.com/embed/playlist/0IZkn2tGWM2l1vFXFPr0fc" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  <script>
+
+  const lBtn = document.querySelector('.l-sound-btn');
+  const kBtn = document.querySelector('.k-sound-btn');
+
+
+  lBtn.onclick = function(){
+    for (let i=0; i < lBtn.childElementCount; i ++){
+      lBtn.children[i].classList.toggle('hiding');
+    }
+  }
+
+  kBtn.onclick = function(){
+    for (let i=0; i < kBtn.childElementCount; i ++){
+      kBtn.children[i].classList.toggle('hiding');
+    }
+  }
+
+  </script>
+
 </body>
 </html>

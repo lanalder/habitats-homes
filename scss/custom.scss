@@ -1,3 +1,19 @@
+$accent: rgb(255, 0, 0, 0.8);
+
+@mixin title {
+  font-family: 'Slabo 27px', serif;
+  color: black;
+  font-size: 23px;
+}
+
+@mixin link {
+  font-family: 'Slabo 27px', serif;
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-color: $accent;
+  color: black;
+}
+
 body {
   margin: 0;
   font-family: 'Slabo 27px', serif;
@@ -5,14 +21,11 @@ body {
 }
 
 a {
-  font-size: 25px;
-  text-decoration: underline;
-  text-decoration-color: rgb(255, 0, 0, 0.8);
-  color: black;
+  @include link;
 }
 
 span {
-  font-size: 23px;
+  @include title
 }
 
 .container {
@@ -39,8 +52,9 @@ span {
   vertical-align: top;
 }
 
-.nav > span {
+.nav span {
   font-size: 30px;
+  /* vertical-align: top; */
   margin-top: 20px;
 }
 
@@ -360,74 +374,4 @@ span {
   left: 0.2vw;
   bottom: 0.3vh;
   height: 50.5vh;
-}
-
-/* heating page ENDS */
-/* ------------------------ */
-
-/* sound page begins */
-
-.container-sound {
-  background-image: url("/img/music.png");
-  background-repeat: repeat;
-
-  max-width: 100%;
-  height: 99.7vh;
-  border: black 1px solid;
-  font-size: 36px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  /* extend container */
-}
-
-.sound-room {
-  display: flex;
-  justify-content: space-between;
-  margin: 2em 2.5em 0em 2.2em;
-}
-
-.k-sound-img {
-  position: absolute;
-  height: 12vh;
-  left: -2vw;
-  top: 0.2vh;
-}
-
-.l-sound-img {
-  position: absolute;
-  height: 11vh;
-  right: 0vw;
-  top: 0vh;
-}
-
-.l-sound-btn > img {
-  left: 2em;
-  height: 18vh;
-  top: 11vh;
-  transform: rotate(90deg);
-  position: absolute;
-}
-
-.k-sound-btn > img {
-  right: 2em;
-  top: 11vh;
-  height: 18vh;
-
-  transform: rotate(90deg);
-  position: absolute;
-  /* extend above */
-}
-
-.container-sound .spotify {
-  margin-top: 13vh;
-}
-
-/* sound page ENDS */
-/* --------------------- */
-
-/* lighting page begins */
-
-.light-slide-container {
-
 }
