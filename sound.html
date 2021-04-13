@@ -12,7 +12,7 @@
 <body>
   <div class="container">
     <div class="nav">
-      <img class="logo" src="img/logo.png" alt="">
+      <img class="logo" src="img/logo.png" alt="habitats' logo">
       <span>Habitats</span>
     </div>
     <div class="container-sound">
@@ -20,36 +20,45 @@
         <span>Kitchen</span>
         <span>Lounge</span>
       </div>
-      <img class="k-sound-img" src="img/sound-page/k-sound.png" alt="">
-      <img class="l-sound-img" src="img/sound-page/l-sound.png" alt="">
+      <img class="k-sound-img" src="img/sound-page/k-sound.png" alt="an old school music player thing">
+      <img class="k-sound-img red-k" src="img/sound-btn-kitchen.png" alt="red outline of old school music player thing">
+      <img class="l-sound-img" src="img/sound-page/l-sound.png" alt="speaker system">
+      <img class="l-sound-img red-l hiding" src="img/sound-btn-lounge.png" alt="red outline of speaker system">
       <div class="sound-btns">
         <div class="l-sound-btn">
-          <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="">
-          <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="">
+          <img class="sound-onBtn" src="/img/btns/onBtn-hrz.png" alt="on switch">
+          <img class="sound-offBtn hiding" src="/img/btns/offBtn-hrz.png" alt="off switch">
         </div>
         <div class="k-sound-btn">
-          <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="">
-          <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="">
+          <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="on switch">
+          <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="off switch">
         </div>
       </div>
-      <iframe src="https://open.spotify.com/embed/playlist/3fDRPfz8cqdS8zNSNdop1B" class= "spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/3fDRPfz8cqdS8zNSNdop1B" class= "spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" alt="spotify iframe"></iframe>
     </div>
   </div>
   <script>
 
   const lBtn = document.querySelector('.l-sound-btn');
   const kBtn = document.querySelector('.k-sound-btn');
-
+  const redK = document.querySelector('.red-k');
+  const redL = document.querySelector('.red-l');
 
   lBtn.onclick = function(){
     for (let i=0; i < lBtn.childElementCount; i ++){
       lBtn.children[i].classList.toggle('hiding');
+      if (lBtn.children[i].classList.contains('hiding')){
+        redK.classList.toggle('hiding');
+      }
     }
   }
 
   kBtn.onclick = function(){
     for (let i=0; i < kBtn.childElementCount; i ++){
       kBtn.children[i].classList.toggle('hiding');
+      if (kBtn.children[i].classList.contains('hiding')){
+        redL.classList.toggle('hiding');
+      }
     }
   }
 

@@ -1,105 +1,88 @@
 body {
   margin: 0;
-  font-family: 'Slabo 27px', serif;
-  color: black;
-}
+  color: black; }
 
 a {
+  font-family: 'Slabo 27px', serif;
   font-size: 25px;
   text-decoration: underline;
-  text-decoration-color: rgb(255, 0, 0, 0.8);
-  color: black;
-}
+  text-decoration-color: rgba(255, 0, 0, 0.5);
+  color: black; }
 
 span {
-  font-size: 23px;
-}
+  font-family: 'Slabo 27px', serif;
+  color: black;
+  font-size: 23px; }
 
-.container {
+.container, .container-sound {
   max-width: 100%;
   height: 99.7vh;
   border: black 1px solid;
   font-size: 36px;
   text-align: center;
   position: relative;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* nav section begins */
-
 .nav {
   height: 8%;
-  background-color: black;
-  color: white;
-}
+  background-color: black; }
 
 .logo {
   height: 11vw;
   width: 110px;
-  vertical-align: top;
-}
+  vertical-align: top; }
 
-.nav > span {
+.nav span {
   font-size: 30px;
   margin-top: 20px;
-}
+  color: white; }
 
 /* nav section ENDS */
-
 /* sound heat light settings begins */
-
 .icon-settings {
   height: 30%;
-  padding: 0.2em 0.5em 0em 0.5em;
-}
+  padding: 0.2em 0.5em 0em 0.5em; }
 
 .icon-title-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
+  align-items: center; }
 
 .heat-i {
- height: 35vh;
- width: 45vw;
- top: 11vh;
- left: -3vw;
- position: absolute;
- z-index: -1;
-}
+  position: absolute;
+  z-index: -1;
+  height: 35vh;
+  width: 45vw;
+  top: 11vh;
+  left: -3vw; }
 
 .sound-i {
   position: absolute;
+  z-index: -1;
   height: 14vh;
   left: 38vw;
   top: 15vh;
-  width: 30vw;
-  z-index: -1;
-}
+  width: 30vw; }
 
 .light-i {
   position: absolute;
+  z-index: -1;
   right: -12vw;
   height: 32vh;
   top: 14vh;
-  width: 48vw;
-  z-index: -1;
-}
+  width: 48vw; }
 
 /* sound heat light settings ENDS */
-
 /* room area begins */
-
 .room-titles {
   position: absolute;
   left: 39vw;
-  top: 29vh;
-}
+  top: 29vh; }
 
 .rooms {
   height: 56%;
-  position: relative;
-}
+  position: relative; }
 
 .room > img {
   height: 56vh;
@@ -107,327 +90,316 @@ span {
   left: 0.15rem;
   bottom: 0.2em;
   z-index: -2;
-  width: 98vw;
-}
+  width: 98vw; }
 
 .rooms .img-btn {
   cursor: pointer;
-  z-index: 5;
-}
+  z-index: 5; }
 
 .bedroom .heat-btn-br,
 .bedroom .light-btn-br,
 .kitchen .sound-btn-kitchen,
 .kitchen .light-btn-kitchen {
-  opacity: 0.63;
-}
+  opacity: 0.63; }
 
 .lounge .sound-btn-lounge {
   height: 11vh;
   width: 20vw;
   top: 27.8vh;
-  left: 6vw;
-}
+  left: 6vw; }
 
 .lounge .heat-btn-lounge {
   height: 32.5vh;
   width: 20.5vw;
   top: 2vh;
-  left: 26vw;
-}
+  left: 26vw; }
 
 .bedroom .heat-btn-br {
   height: 14vh;
   width: 18vw;
   top: 18.5vh;
-  left: 58vw;
-}
+  left: 58vw; }
 
 .bedroom .light-btn-br {
   height: 25vh;
   width: 12vw;
   top: 14.5vh;
-  left: 80vw;
-}
+  left: 80vw; }
 
 .kitchen .sound-btn-kitchen {
   height: 7.5vh;
   width: 9vw;
   top: 26.3vh;
-  left: 12.5vw;
-}
+  left: 12.5vw; }
 
 .kitchen .light-btn-kitchen {
   height: 14vh;
   width: 14vw;
   top: 2vh;
-  left: 29vw;
-}
+  left: 29vw; }
 
 .hiding {
-  display: none;
-}
+  display: none; }
 
 #leftBtn {
   position: absolute;
   z-index: 10;
+  cursor: pointer;
   height: 4vh;
   left: 5vw;
-  bottom: 10vh;
-  cursor: pointer;
-
-}
+  bottom: 10vh; }
 
 #rightBtn {
   position: absolute;
   z-index: 10;
+  cursor: pointer;
   height: 4vh;
   right: 5vw;
-  bottom: 10vh;
-  cursor: pointer;
-}
+  bottom: 10vh; }
 
 /* room area ENDS */
-
 /* footer section begins */
-
 .footer {
   height: 5%;
-  background-color: black;
-}
+  background-color: black; }
 
-.footer .footer-text {
+.footer-text > span {
   color: white;
   float: left;
   font-size: 20px;
-  padding-left: 10px;
-}
+  padding-left: 10px; }
 
 .footer-btn > img {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
   width: 30px;
   transform: rotate(90deg);
-  position: absolute;
   bottom: -3.2vh;
-  right: 8vw;
-}
+  right: 8vw; }
 
 /* footer section ENDS */
-
 /* ------------------------ */
 /* heating page begins */
-
 .heat-bg-img > img {
   position: absolute;
   z-index: -100;
   opacity: 0.1;
   left: 18vw;
   top: -1vh;
-  height: 65vh;
-}
+  height: 65vh; }
 
 .house-heat {
   display: flex;
   justify-content: space-between;
   margin-top: 2vh;
-  margin-left: 2.5vh;
-}
+  margin-left: 2.5vh; }
 
 .house-heat-btn > img {
-  height: 27vh;
-}
+  height: 27vh; }
 
 .house-heat-btn:hover {
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 /* temp slider begins */
-
 .temp-slide-container {
   margin-top: 0.9vh;
-  text-align: left;
-}
+  text-align: left; }
 
 .temp-slide-container > span {
-  font-size: 23px;
-  padding-left: 3vw;
-}
+  padding-left: 3vw; }
 
 .temp-slider {
   -webkit-appearance: none;
   appearance: none;
   outline: none;
-  width: 70vw;
-  background: rgb(255, 0, 0, 0.4);
   border-radius: 5px;
-}
+  width: 70vw;
+  background: rgba(255, 0, 0, 0.5); }
 
 .temp-slider::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
+  outline: none;
+  border-radius: 5px;
   width: 30px;
   height: 30px;
   background: #2a2a2a;
-  cursor: pointer;
-  border-radius: 5px;
-}
+  cursor: pointer; }
 
 .temp-value {
-  text-align: center;
-}
+  text-align: center; }
 
 /* temp slider ENDS */
-
 .heat-room-titles {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-}
+  padding: 1rem; }
 
 .room-btns {
   display: flex;
   justify-content: space-between;
-}
+  cursor: pointer; }
 
 .lounge-btns > img {
   height: 16vh;
   padding-left: 30vw;
   margin-top: -10vh;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .br-btns > img {
   height: 16vh;
   padding-right: 32vw;
   margin-top: -10vh;
-  cursor: pointer;
-
-}
+  cursor: pointer; }
 
 .br-heat {
   position: absolute;
   right: -68vw;
   height: 63vh;
   bottom: -10vh;
-  z-index: -50;
-}
+  z-index: -50; }
 
 .lounge-heat {
   position: absolute;
   left: -68vw;
   height: 65vh;
   bottom: -10vh;
-  z-index: -50;
-}
-
-/* heating page ENDS */
-
-/* ------------------------- */
-/* lighting page begins */
-
-.light-bg-img > img {
-  position: absolute;
-  z-index: -100;
-  opacity: 0.1;
-  left: 18vw;
-  top: 8vh;
-  height: 90vh;
-}
-
-.k-light {
-  position: absolute;
-  top: 7vh;
-  height: 29vh;
-  left: 23vw;
-}
-
-.k-light-red {
-  position: absolute;
-  top: 7vh;
-  height: 29vh;
-  left: 19.8vw;
-  opacity: 0.7;
-}
-
-.br-light {
-  position: absolute;
-  left: 1vw;
-  bottom: 0.5vh;
-  height: 50vh;
-}
-
-.br-light-red {
-  position: absolute;
-  left: 0.2vw;
-  bottom: 0.3vh;
-  height: 50.5vh;
-}
+  z-index: -50; }
 
 /* heating page ENDS */
 /* ------------------------ */
-
 /* sound page begins */
-
 .container-sound {
   background-image: url("/img/music.png");
-  background-repeat: repeat;
-
-  max-width: 100%;
-  height: 99.7vh;
-  border: black 1px solid;
-  font-size: 36px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  /* extend container */
-}
+  background-repeat: repeat; }
 
 .sound-room {
   display: flex;
   justify-content: space-between;
-  margin: 2em 2.5em 0em 2.2em;
-}
+  margin: 2em 2.5em 0em 2.2em; }
 
 .k-sound-img {
   position: absolute;
   height: 12vh;
   left: -2vw;
-  top: 0.2vh;
-}
+  top: 0.2vh; }
+
+.red-k {
+  position: absolute;
+  height: 12vh;
+  left: 0.5vw;
+  top: 0vh;
+  opacity: 0.7; }
 
 .l-sound-img {
   position: absolute;
   height: 11vh;
   right: 0vw;
-  top: 0vh;
-}
+  top: 0vh; }
+
+.red-l {
+  position: absolute;
+  height: 12vh;
+  right: 0vw;
+  top: -0.9vh; }
 
 .l-sound-btn > img {
   left: 2em;
   height: 18vh;
   top: 11vh;
   transform: rotate(90deg);
-  position: absolute;
-}
+  position: absolute; }
 
 .k-sound-btn > img {
   right: 2em;
   top: 11vh;
   height: 18vh;
-
   transform: rotate(90deg);
   position: absolute;
-  /* extend above */
-}
+  /* extend above */ }
 
 .container-sound .spotify {
-  margin-top: 13vh;
-}
+  margin-top: 13vh; }
 
 /* sound page ENDS */
-/* --------------------- */
-
+/* ------------------------- */
 /* lighting page begins */
+.light-bg-img > img {
+  position: absolute;
+  z-index: -100;
+  opacity: 0.1;
+  left: 18vw;
+  top: 8vh;
+  height: 90vh; }
+
+.k-light {
+  position: absolute;
+  top: 7vh;
+  height: 29vh;
+  left: 23vw; }
+
+.k-light-red {
+  position: absolute;
+  top: 7vh;
+  height: 29vh;
+  left: 19.8vw;
+  opacity: 0.7; }
+
+.br-light {
+  position: absolute;
+  left: 1vw;
+  bottom: 0.5vh;
+  height: 50vh; }
+
+.br-light-red {
+  position: absolute;
+  left: 0.2vw;
+  bottom: 0.3vh;
+  height: 50.5vh; }
 
 .light-slide-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40%;
+  padding-top: 10%;
+  margin-right: 10%;
+  width: 50%; }
 
-}
+.light-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  background: rgba(255, 0, 0, 0.5); }
+
+.light-slider::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  width: 20px;
+  height: 20px;
+  background: #2a2a2a;
+  cursor: pointer; }
+
+.k-light-btn {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  height: 14vh;
+  left: 11vw;
+  top: 12vh; }
+
+.br-light-btn {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  height: 12vh;
+  left: 21vw;
+  top: 77vh; }
+
+.br-slide {
+  margin-top: 50vh; }
+
+/*# sourceMappingURL=custom.css.map */

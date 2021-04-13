@@ -1,4 +1,4 @@
-$accent: rgb(255, 0, 0, 0.8);
+$accent: rgba(#ff0000, 0.5);
 
 @mixin title {
   font-family: 'Slabo 27px', serif;
@@ -14,9 +14,26 @@ $accent: rgb(255, 0, 0, 0.8);
   color: black;
 }
 
+@mixin homepageIcons {
+  position: absolute;
+  z-index: -1;
+}
+
+@mixin buttons {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+
+@mixin slider {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+}
+
 body {
   margin: 0;
-  font-family: 'Slabo 27px', serif;
   color: black;
 }
 
@@ -25,7 +42,7 @@ a {
 }
 
 span {
-  @include title
+  @include title;
 }
 
 .container {
@@ -43,7 +60,6 @@ span {
 .nav {
   height: 8%;
   background-color: black;
-  color: white;
 }
 
 .logo {
@@ -54,8 +70,8 @@ span {
 
 .nav span {
   font-size: 30px;
-  /* vertical-align: top; */
   margin-top: 20px;
+  color: white;
 }
 
 /* nav section ENDS */
@@ -74,30 +90,27 @@ span {
 }
 
 .heat-i {
+  @include homepageIcons;
  height: 35vh;
  width: 45vw;
  top: 11vh;
  left: -3vw;
- position: absolute;
- z-index: -1;
 }
 
 .sound-i {
-  position: absolute;
+  @include homepageIcons;
   height: 14vh;
   left: 38vw;
   top: 15vh;
   width: 30vw;
-  z-index: -1;
 }
 
 .light-i {
-  position: absolute;
+  @include homepageIcons;
   right: -12vw;
   height: 32vh;
   top: 14vh;
   width: 48vw;
-  z-index: -1;
 }
 
 /* sound heat light settings ENDS */
@@ -183,22 +196,17 @@ span {
 }
 
 #leftBtn {
-  position: absolute;
-  z-index: 10;
+  @include buttons;
   height: 4vh;
   left: 5vw;
   bottom: 10vh;
-  cursor: pointer;
-
 }
 
 #rightBtn {
-  position: absolute;
-  z-index: 10;
+  @include buttons;
   height: 4vh;
   right: 5vw;
   bottom: 10vh;
-  cursor: pointer;
 }
 
 /* room area ENDS */
@@ -210,7 +218,7 @@ span {
   background-color: black;
 }
 
-.footer .footer-text {
+.footer-text > span {
   color: white;
   float: left;
   font-size: 20px;
@@ -218,9 +226,9 @@ span {
 }
 
 .footer-btn > img {
+  @include buttons;
   width: 30px;
   transform: rotate(90deg);
-  position: absolute;
   bottom: -3.2vh;
   right: 8vw;
 }
@@ -262,27 +270,21 @@ span {
 }
 
 .temp-slide-container > span {
-  font-size: 23px;
   padding-left: 3vw;
 }
 
 .temp-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
+  @include slider;
   width: 70vw;
-  background: rgb(255, 0, 0, 0.4);
-  border-radius: 5px;
+  background: $accent;
 }
 
 .temp-slider::-moz-range-thumb {
-  -webkit-appearance: none;
-  appearance: none;
+  @include slider;
   width: 30px;
   height: 30px;
   background: #2a2a2a;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 .temp-value {
@@ -300,6 +302,7 @@ span {
 .room-btns {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .lounge-btns > img {
@@ -334,6 +337,75 @@ span {
 }
 
 /* heating page ENDS */
+
+/* ------------------------ */
+
+/* sound page begins */
+
+.container-sound {
+  @extend .container;
+  background-image: url("/img/music.png");
+  background-repeat: repeat;
+}
+
+.sound-room {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em 2.5em 0em 2.2em;
+}
+
+.k-sound-img {
+  position: absolute;
+  height: 12vh;
+  left: -2vw;
+  top: 0.2vh;
+}
+
+.red-k {
+  position: absolute;
+  height: 12vh;
+  left: 0.5vw;
+  top: 0vh;
+  opacity: 0.7;
+}
+
+.l-sound-img {
+  position: absolute;
+  height: 11vh;
+  right: 0vw;
+  top: 0vh;
+}
+
+.red-l {
+  position: absolute;
+  height: 12vh;
+  right: 0vw;
+  top: -0.9vh;
+}
+
+.l-sound-btn > img {
+  left: 2em;
+  height: 18vh;
+  top: 11vh;
+  transform: rotate(90deg);
+  position: absolute;
+}
+
+.k-sound-btn > img {
+  right: 2em;
+  top: 11vh;
+  height: 18vh;
+
+  transform: rotate(90deg);
+  position: absolute;
+  /* extend above */
+}
+
+.container-sound .spotify {
+  margin-top: 13vh;
+}
+
+/* sound page ENDS */
 
 /* ------------------------- */
 /* lighting page begins */
@@ -374,4 +446,44 @@ span {
   left: 0.2vw;
   bottom: 0.3vh;
   height: 50.5vh;
+}
+
+.light-slide-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40%;
+  padding-top: 10%;
+  margin-right: 10%;
+  width: 50%;
+}
+
+.light-slider {
+  @include slider;
+  background: $accent;
+}
+
+.light-slider::-moz-range-thumb {
+  @include slider;
+  width: 20px;
+  height: 20px;
+  background: #2a2a2a;
+  cursor: pointer;
+}
+
+.k-light-btn {
+  @include buttons;
+  height: 14vh;
+  left: 11vw;
+  top: 12vh;
+}
+
+.br-light-btn {
+  @include buttons;
+  height: 12vh;
+  left: 21vw;
+  top: 77vh;
+}
+
+.br-slide {
+  margin-top: 50vh;
 }

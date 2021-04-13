@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,26 +10,99 @@
   <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
   <title>Lighting - Habitats</title>
+
 </head>
 
 <body>
+
   <div class="container">
+
     <div class="light-bg-img">
+
       <img src="img/lava.png" alt="">
+
     </div>
+
     <div class="nav">
-      <img class="logo" src="img/logo.png" alt="">
+
+      <img class="logo" src="img/logo.png" alt="habitats' logo">
       <span>Habitats</span>
+
     </div>
+
     <img class="br-light" src="img/light.png" alt="">
     <img class="br-light-red" src="img/light-btn-br.png" alt="">
     <img class="k-light" src="img/light-k.png" alt="">
     <img class="k-light-red" src="img/light-btn-kitchen.png" alt="">
-    <div class="light-slide-container">
-      <span>Bedroom - Lighting </span>
-      <input type="range" min="0" max="10" value="5" class="light-slider">
+
+    <div class="k-btns">
+
+      <img class="k-light-btn" src="img/btns/onBtn.png" alt="on switch">
+      <img class="k-light-btn hiding" src="img/btns/offBtn.png" alt="off switch">
+
     </div>
+
+    <div class="br-btns">
+
+      <img class="br-light-btn" src="img/btns/onBtn.png" alt="on switch">
+      <img class="br-light-btn hiding" src="img/btns/offBtn.png" alt="off switch">
+
+    </div>
+
+    <div class="light-slide-container">
+
+      <span>Kitchen - Lighting </span>
+      <input type="range" min="0" max="10" value="5" class="light-slider k-slide-input">
+
+      <span class="br-slide">Bedroom - Lighting </span>
+      <input type="range" min="0" max="10" value="5" class="light-slider br-slide-input">
+
+    </div>
+
   </div>
+
+  <script>
+
+  const kBtn = document.querySelector('.k-btns');
+  const brBtn = document.querySelector('.br-btns');
+
+  const kSlider = document.querySelector('.k-slide-input');
+  const brSlider = document.querySelector('.br-slide-input');
+
+  const brRed = document.querySelector('.br-light-red');
+  const kRed = document.querySelector('.k-light-red');
+
+  let i;
+
+  kBtn.onclick = function(){
+    for (i=0; i < kBtn.childElementCount; i++){
+      kBtn.children[i].classList.toggle('hiding');
+      if (kBtn.children[i].classList.contains('hiding')){
+        kSlider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
+        kRed.classList.remove('hiding');
+      } else {
+        kSlider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
+        kRed.classList.add('hiding');
+      }
+    }
+  }
+
+  brBtn.onclick = function(){
+    for (i=0; i < brBtn.childElementCount; i++){
+      brBtn.children[i].classList.toggle('hiding');
+      if (brBtn.children[i].classList.contains('hiding')){
+        brSlider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
+        brRed.classList.remove('hiding');
+      } else {
+        brSlider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
+        brRed.classList.add('hiding');
+      }
+    }
+  }
+
+
+  </script>
+
 </body>
 
 </html>

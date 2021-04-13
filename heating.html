@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,54 +10,81 @@
   <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
   <title>Heating - Habitats</title>
+
 </head>
 
 <body>
+
   <div class="container">
+
     <div class="heat-bg-img">
-      <img src="img/fire.png" alt="">
+
+      <img src="img/fire.png" alt="a roaring fire">
+
     </div>
+
     <!-- nav section begins -->
     <div class="nav">
-      <img class="logo" src="img/logo.png" alt="">
+
+      <img class="logo" src="img/logo.png" alt="habitats' logo">
       <span>Habitats</span>
+
     </div>
     <!-- nav section ENDS -->
 
     <!-- content section begins -->
     <div class="house-heat">
+
       <div class="house-heat-btn">
-        <img class="onBtn" src="img/btns/onBtn.png" alt="">
-        <img class="hiding offBtn" src="img/btns/offBtn.png" alt="">
+
+        <img class="onBtn" src="img/btns/onBtn.png" alt="on switch">
+        <img class="hiding offBtn" src="img/btns/offBtn.png" alt="off switch">
+
       </div>
+
       <div class="temp-slide-container">
+
         <span>House Temperature </span>
         <input type="range" min="18" max="35" value="20" class="temp-slider">
         <div class="temp-value"><p>'°'</p></div>
+
       </div>
+
     </div>
 
     <div class="room-heat">
+
       <div class="heat-room-titles">
+
         <span>Lounge</span>
         <span>Bedroom</span>
+
       </div>
+
       <div class="room-btns">
+
         <div class="lounge-btns">
-          <img class="onBtn hiding" src="img/btns/onBtn.png" alt="">
-          <img class="offBtn" src="img/btns/offBtn.png" alt="">
+
+          <img class="onBtn hiding" src="img/btns/onBtn.png" alt="on switch">
+          <img class="offBtn" src="img/btns/offBtn.png" alt="off switch">
+
         </div>
+
         <div class="br-btns">
-          <img class="onBtn" src="img/btns/onBtn.png" alt="">
-          <img class="offBtn hiding" src="img/btns/offBtn.png" alt="">
+
+          <img class="onBtn" src="img/btns/onBtn.png" alt="on switch">
+          <img class="offBtn hiding" src="img/btns/offBtn.png" alt="off switch">
+
         </div>
+
       </div>
-      <img class="lounge-heat" src="img/heating-page/lounge.png" alt="">
-      <img class="br-heat" src="img/heating-page/bedroom.png" alt="">
+
+      <img class="lounge-heat" src="img/heating-page/lounge.png" alt="lounge">
+      <img class="br-heat" src="img/heating-page/bedroom.png" alt="bedroom">
+
     </div>
-
-
     <!-- content section ENDS -->
+
   </div>
 
   <div class="footer">
@@ -64,10 +93,12 @@
 
   <script>
   //internal to html since don't wanna break js from index page
+
     const slider = document.querySelector('.temp-slider');
     const output = document.querySelector('.temp-value');
     output.innerHTML = slider.value +'°';
 
+    //changes the value displayed to whatever value the slider is set at
     slider.oninput = function() {
       output.innerHTML = this.value +'°';
     }
@@ -77,6 +108,7 @@
 
     let i;
 
+    //usual switch change thing
     houseBtn.onclick = function(){
       for (i=0; i < houseBtn.childElementCount; i++){
         houseBtn.children[i].classList.toggle('hiding');
@@ -108,6 +140,7 @@
     }
 
   </script>
+
 </body>
 
 </html>
