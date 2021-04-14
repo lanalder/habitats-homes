@@ -26,8 +26,10 @@
     <!-- nav section begins -->
     <div class="nav">
 
-      <img class="logo" src="img/logo.png" alt="habitats' logo">
-      <span>Habitats</span>
+      <a href="index.html">
+        <img class="logo" src="img/logo.png" alt="habitats' logo">
+        <span>Habitats</span>
+      </a>
 
     </div>
     <!-- nav section ENDS -->
@@ -80,14 +82,21 @@
       </div>
 
       <img class="lounge-heat" src="img/heating-page/lounge.png" alt="lounge">
+      <img class="l-heat-red" src="img/heat-btn-lounge.png" alt="red outline of fire">
+
       <img class="br-heat" src="img/heating-page/bedroom.png" alt="bedroom">
+      <img class="br-heat-red" src="img/heat-btn-br.png" alt="red outline of heater">
+
+      <div class="go-back">
+
+        <a href="index.html">
+          <img class="go-back-btn" src="img/btns/leftBtn.png" alt="">
+        </a>
+
+      </div>
 
     </div>
     <!-- content section ENDS -->
-
-  </div>
-
-  <div class="footer">
 
   </div>
 
@@ -106,28 +115,8 @@
     const houseBtn = document.querySelector('.house-heat-btn');
     const onBtn = document.querySelector('.onBtn');
 
-    let i;
-
-    //usual switch change thing
-    houseBtn.onclick = function(){
-      for (i=0; i < houseBtn.childElementCount; i++){
-        houseBtn.children[i].classList.toggle('hiding');
-      }
-      //changes slider colour when heating is on / off
-      if (onBtn.classList.contains('hiding')){
-        slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
-        loungeBtn.children[0].classList.add('hiding');
-        loungeBtn.children[1].classList.remove('hiding');
-        brBtn.children[0].classList.add('hiding');
-        brBtn.children[1].classList.remove('hiding');
-      } else {
-        slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
-        loungeBtn.children[1].classList.add('hiding');
-        loungeBtn.children[0].classList.remove('hiding');
-        brBtn.children[1].classList.add('hiding');
-        brBtn.children[0].classList.remove('hiding');
-      }
-    }
+    const brr = document.querySelector('.br-heat-red');
+    const grr = document.querySelector('.l-heat-red');
 
     const loungeBtn = document.querySelector('.lounge-btns');
     const brBtn = document.querySelector('.br-btns');
@@ -135,15 +124,45 @@
     const lounge = document.querySelector('.lounge-heat');
     const br = document.querySelector('.br-heat');
 
+    let i;
+
+    //usual switch change thing
+    houseBtn.onclick = function(){
+      for (i=0; i < houseBtn.childElementCount; i++){
+        houseBtn.children[i].classList.toggle('hiding');
+      }
+      //REVIEIEW CONSINECNESS!!!!!!!!!! and name / comment proper
+      if (onBtn.classList.contains('hiding')){
+        slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
+        loungeBtn.children[0].classList.add('hiding');
+        loungeBtn.children[1].classList.remove('hiding');
+        brBtn.children[0].classList.add('hiding');
+        brBtn.children[1].classList.remove('hiding');
+        brr.classList.toggle('hiding');
+        grr.classList.toggle('hiding');
+      } else {
+        slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
+        loungeBtn.children[1].classList.add('hiding');
+        loungeBtn.children[0].classList.remove('hiding');
+        brBtn.children[1].classList.add('hiding');
+        brBtn.children[0].classList.remove('hiding');
+        brr.classList.toggle('hiding');
+        grr.classList.toggle('hiding');
+      }
+    }
+
     loungeBtn.onclick = function(){
       for (i=0; i < loungeBtn.childElementCount; i++){
         loungeBtn.children[i].classList.toggle('hiding');
+        //MAKE this work idk wtf its issue
+        grr.classList.toggle('hiding');
       }
     }
 
     brBtn.onclick = function(){
       for (i=0; i < brBtn.childElementCount; i++){
         brBtn.children[i].classList.toggle('hiding');
+        brr.classList.toggle('hiding');
       }
     }
 

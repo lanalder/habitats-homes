@@ -4,7 +4,7 @@ body {
 
 a {
   font-family: 'Slabo 27px', serif;
-  font-size: 25px;
+  font-size: 1.8rem;
   text-decoration: underline;
   text-decoration-color: rgba(255, 0, 0, 0.5);
   color: black; }
@@ -12,7 +12,7 @@ a {
 span {
   font-family: 'Slabo 27px', serif;
   color: black;
-  font-size: 23px; }
+  font-size: 23rem; }
 
 .container, .container-sound {
   max-width: 100%;
@@ -430,58 +430,5 @@ span {
 
 .go-back .go-back-btn {
   top: 7vh; }
-
-@media screen and (min-width: 420px) {
-  .logo {
-    height: 98%;
-    width: 20%; }
-
-  a {
-    font-size: 3rem; }
-
-  span {
-    font-size: 4rem; }
-
-  .nav span {
-    font-size: 4rem; }
-
-  .room-titles {
-    top: 28vh; }
-
-  .room-titles span {
-    font-size: 5rem; }
-
-  .footer-text span {
-    font-size: 2rem; }
-
-  .footer-btn img {
-    bottom: 0vh; }
-
-  .heat-bg-img img {
-    height: 90vh;
-    top: 10vh;
-    left: 25vw; }
-
-  .l-heat-red,
-  .br-heat-red {
-    display: none; }
-
-  .k-sound-img,
-  .red-k,
-  .l-sound-img,
-  .red-l {
-    display: none; }
-
-  .l-sound-btn > img,
-  .k-sound-btn > img {
-    height: 30vh;
-    padding-left: 10vw; }
-
-  .spotify {
-    height: 50vh;
-    margin-top: 0.5vh; }
-
-  .k-light-red {
-    left: 21vw; } }
 
 /*# sourceMappingURL=custom.css.map */

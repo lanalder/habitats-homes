@@ -9,34 +9,69 @@
   <link rel="stylesheet" href="css/custom.css">
   <title>Sound - Habitats</title>
 </head>
+
 <body>
+
   <div class="container">
+
+    <!-- nav section begins -->
     <div class="nav">
-      <img class="logo" src="img/logo.png" alt="habitats' logo">
-      <span>Habitats</span>
+
+      <a href="index.html">
+        <img class="logo" src="img/logo.png" alt="habitats' logo">
+        <span>Habitats</span>
+      </a>
+
     </div>
+    <!-- nav section ENDS -->
+
     <div class="container-sound">
+
       <div class="sound-room">
+
         <span>Kitchen</span>
         <span>Lounge</span>
+
       </div>
+
+      <!-- images begin -->
       <img class="k-sound-img" src="img/sound-page/k-sound.png" alt="an old school music player thing">
-      <img class="k-sound-img red-k" src="img/sound-btn-kitchen.png" alt="red outline of old school music player thing">
+      <img class="k-sound-img red-k hiding" src="img/sound-btn-kitchen.png" alt="red outline of old school music player thing">
+
       <img class="l-sound-img" src="img/sound-page/l-sound.png" alt="speaker system">
       <img class="l-sound-img red-l hiding" src="img/sound-btn-lounge.png" alt="red outline of speaker system">
+      <!-- images END -->
+
+      <!-- buttons n sliders begin -->
       <div class="sound-btns">
+
         <div class="l-sound-btn">
-          <img class="sound-onBtn" src="/img/btns/onBtn-hrz.png" alt="on switch">
-          <img class="sound-offBtn hiding" src="/img/btns/offBtn-hrz.png" alt="off switch">
-        </div>
-        <div class="k-sound-btn">
+
           <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="on switch">
           <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="off switch">
+
         </div>
+
+        <div class="k-sound-btn">
+
+          <img class="sound-onBtn hiding" src="/img/btns/onBtn-hrz.png" alt="on switch">
+          <img class="sound-offBtn" src="/img/btns/offBtn-hrz.png" alt="off switch">
+
+        </div>
+
       </div>
-      <iframe src="https://open.spotify.com/embed/playlist/3fDRPfz8cqdS8zNSNdop1B" class= "spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" alt="spotify iframe"></iframe>
+
+      <a href="index.html">
+        <img class="go-back-btn" src="img/btns/leftBtn.png" alt="">
+      </a>
+
+      <iframe src="https://open.spotify.com/embed/playlist/6QZocStJ6acCrHqCHddrlS" class="spotify" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
     </div>
+    <!-- buttons n sliders END -->
+
   </div>
+
   <script>
 
   const lBtn = document.querySelector('.l-sound-btn');
