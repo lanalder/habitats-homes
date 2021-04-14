@@ -305,14 +305,14 @@ span {
   cursor: pointer;
 }
 
-.lounge-btns > img {
+.br-btns > img {
   height: 16vh;
   padding-left: 30vw;
   margin-top: -10vh;
   cursor: pointer;
 }
 
-.br-btns > img {
+.lounge-btns > img {
   height: 16vh;
   padding-right: 32vw;
   margin-top: -10vh;
@@ -320,17 +320,17 @@ span {
 
 }
 
-.br-heat {
+.lounge-heat {
   position: absolute;
-  right: -68vw;
+  right: -66vw;
   height: 63vh;
   bottom: -10vh;
   z-index: -50;
 }
 
-.lounge-heat {
+.br-heat {
   position: absolute;
-  left: -68vw;
+  left: -66vw;
   height: 65vh;
   bottom: -10vh;
   z-index: -50;
@@ -487,3 +487,12 @@ span {
 .br-slide {
   margin-top: 50vh;
 }
+
+.go-back-btn {
+  @include buttons;
+  height: 5vh;
+  right: 0.2vw;
+  bottom: 0.2vh;
+}
+
+// lighting page ENDS

@@ -56,24 +56,24 @@
 
       <div class="heat-room-titles">
 
-        <span>Lounge</span>
         <span>Bedroom</span>
+        <span>Lounge</span>
 
       </div>
 
       <div class="room-btns">
 
-        <div class="lounge-btns">
-
-          <img class="onBtn hiding" src="img/btns/onBtn.png" alt="on switch">
-          <img class="offBtn" src="img/btns/offBtn.png" alt="off switch">
-
-        </div>
-
         <div class="br-btns">
 
           <img class="onBtn" src="img/btns/onBtn.png" alt="on switch">
           <img class="offBtn hiding" src="img/btns/offBtn.png" alt="off switch">
+
+        </div>
+
+        <div class="lounge-btns">
+
+          <img class="onBtn hiding" src="img/btns/onBtn.png" alt="on switch">
+          <img class="offBtn" src="img/btns/offBtn.png" alt="off switch">
 
         </div>
 
@@ -116,8 +116,16 @@
       //changes slider colour when heating is on / off
       if (onBtn.classList.contains('hiding')){
         slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
+        loungeBtn.children[0].classList.add('hiding');
+        loungeBtn.children[1].classList.remove('hiding');
+        brBtn.children[0].classList.add('hiding');
+        brBtn.children[1].classList.remove('hiding');
       } else {
         slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
+        loungeBtn.children[1].classList.add('hiding');
+        loungeBtn.children[0].classList.remove('hiding');
+        brBtn.children[1].classList.add('hiding');
+        brBtn.children[0].classList.remove('hiding');
       }
     }
 
