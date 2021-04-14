@@ -28,6 +28,9 @@ span {
   height: 7%;
   background-color: black; }
 
+.nav a {
+  text-decoration: none; }
+
 .logo {
   height: 11vw;
   width: 110px;
