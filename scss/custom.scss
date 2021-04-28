@@ -450,15 +450,17 @@ span {
   position: absolute;
   top: 7vh;
   height: 29vh;
-  left: 23vw;
+  left: 20vw;
+  z-index: -3;
 }
 
 .k-light-red {
   position: absolute;
   top: 7vh;
   height: 29vh;
-  left: 19.8vw;
+  left: 16.8vw;
   opacity: 0.7;
+  z-index: -3;
 }
 
 .br-light {
@@ -499,16 +501,15 @@ span {
 
 .k-light-btn {
   @include buttons;
-  height: 14vh;
-  right: 7vw;
+  height: 16vh;
+  right: 38vw;
   top: 22vh;
 }
 
 .br-light-btn {
   @include buttons;
-  height: 12vh;
-  left: -8vw;
-  top: 77vh;
+  left: -2vw;
+  bottom: 5vh;
 }
 
 .br-slide {
