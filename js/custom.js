@@ -26,7 +26,7 @@ var btnState = {
 function first(){ //sets up click events for all the red buttons
   for (let i = 0; i < redBtns.length; i ++){
     redBtns[i].onclick = function(){
-      //newEl is named badly since its only 'new' relative to the other function; here it's really the old element, but anyway this conditional clears that old (odd number) click when the click function is skipped over and the array of indexOld is still building up its two required values to do what it needs to do
+      //newEl is named badly since it's only 'new' relative to the other function; here it's really the old element, but anyway this conditional clears that old (odd number) click when the click function is skipped over and the array of indexOld is still building up its two required values to do what it needs to do
       if (btnState.newEl != null){
         f[btnState.newEl].classList.add('hiding');
       }
