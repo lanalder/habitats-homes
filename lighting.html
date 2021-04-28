@@ -91,6 +91,7 @@
   let i;
 
   kBtn.onclick = function(){
+    //switchs colour of slider and red outlines on/off depending on button states
     for (i=0; i < kBtn.childElementCount; i++){
       kBtn.children[i].classList.toggle('hiding');
       if (kBtn.children[i].classList.contains('hiding')){

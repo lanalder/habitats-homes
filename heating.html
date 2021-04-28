@@ -74,8 +74,8 @@
 
         <div class="lounge-btns">
 
-          <img class="onBtn hiding" src="img/btns/onBtn.png" alt="on switch">
-          <img class="offBtn" src="img/btns/offBtn.png" alt="off switch">
+          <img class="onBtn" src="img/btns/onBtn.png" alt="on switch">
+          <img class="offBtn hiding" src="img/btns/offBtn.png" alt="off switch">
 
         </div>
 
@@ -101,7 +101,7 @@
   </div>
 
   <script>
-  //internal to html since don't wanna break js from index page
+  //for js other than relating to homepage, i wrote it internally so that it doesn't break trying to find vars that don't exist in this document, and so save file space
 
     const slider = document.querySelector('.temp-slider');
     const output = document.querySelector('.temp-value');
@@ -115,56 +115,88 @@
     const houseBtn = document.querySelector('.house-heat-btn');
     const onBtn = document.querySelector('.onBtn');
 
-    const brr = document.querySelector('.br-heat-red');
-    const grr = document.querySelector('.l-heat-red');
+    const brOutline = document.querySelector('.br-heat-red');
+    const lOutline = document.querySelector('.l-heat-red');
 
     const loungeBtn = document.querySelector('.lounge-btns');
     const brBtn = document.querySelector('.br-btns');
+    // lounge/br/houseBtn.children[0] is always on button and [1] is always off
 
     const lounge = document.querySelector('.lounge-heat');
     const br = document.querySelector('.br-heat');
 
     let i;
 
-    //usual switch change thing
+    //switch state change for main button, the switchall function as you'll see makes the on/off state consistent throughout the red indicators and for the room buttons
     houseBtn.onclick = function(){
       for (i=0; i < houseBtn.childElementCount; i++){
         houseBtn.children[i].classList.toggle('hiding');
       }
-      //REVIEIEW CONSINECNESS!!!!!!!!!! and name / comment proper
+      switchAll();
+    }
+
+    switchAll = function(){
+      // changes room states btns and colours to reflect if & when whole house heating is on/off. consistency = key!
       if (onBtn.classList.contains('hiding')){
         slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
-        loungeBtn.children[0].classList.add('hiding');
-        loungeBtn.children[1].classList.remove('hiding');
-        brBtn.children[0].classList.add('hiding');
-        brBtn.children[1].classList.remove('hiding');
-        brr.classList.toggle('hiding');
-        grr.classList.toggle('hiding');
+        //if one but not both the rooms are off, we don't want to toggle them back on when the whole house is off. hence the if loops below, which only turn the room buttons off when they are not already so
+        if (loungeBtn.children[1].classList.contains('hiding')){
+          // for loops were easier and less code than adding/removing each child's class, adding and removing also causes issues when toggle is used p much everywhere else, since then it might be added twice etc.
+          for (i = 0; i < 2; i++){
+            loungeBtn.children[i].classList.toggle('hiding');
+          }
+          lOutline.classList.toggle('hiding');
+        }
+        if (brBtn.children[1].classList.contains('hiding')){
+          for (i = 0; i < 2; i++){
+            brBtn.children[i].classList.toggle('hiding');
+          }
+          brOutline.classList.toggle('hiding');
+        }
       } else {
         slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
-        loungeBtn.children[1].classList.add('hiding');
-        loungeBtn.children[0].classList.remove('hiding');
-        brBtn.children[1].classList.add('hiding');
-        brBtn.children[0].classList.remove('hiding');
-        brr.classList.toggle('hiding');
-        grr.classList.toggle('hiding');
+        // future development: to somewhat repeat the above half of the function but in reverse, so that when house heating is switched on again so are the rooms. with toggle at this point it messes it up though
       }
     }
 
     loungeBtn.onclick = function(){
-      for (i=0; i < loungeBtn.childElementCount; i++){
+      for (i=0; i < 2; i++){
         loungeBtn.children[i].classList.toggle('hiding');
-        //MAKE this work idk wtf its issue
-        grr.classList.toggle('hiding');
       }
+      lOutline.classList.toggle('hiding');
+      changeFromRooms();
     }
 
     brBtn.onclick = function(){
-      for (i=0; i < brBtn.childElementCount; i++){
+      for (i=0; i < 2; i++){
         brBtn.children[i].classList.toggle('hiding');
-        brr.classList.toggle('hiding');
+      }
+      brOutline.classList.toggle('hiding');
+      changeFromRooms();
+    }
+
+    changeFromRooms = function(){
+      //as the name suggests, this just makes sure the slider colour and house btn are in their off state when both the rooms are off
+      if (loungeBtn.children[0].classList.contains('hiding') && brBtn.children[0].classList.contains('hiding')){
+        // changes slider colour
+        slider.setAttribute('style', 'background-color: rgb(94, 94, 94, 0.4)');
+        //changes house button state
+        if (houseBtn.children[1].classList.contains('hiding')){
+          for (i=0; i < 2; i++){
+            houseBtn.children[i].classList.toggle('hiding');
+          }
+        }
+      // this statement changes house heating buttn and slider back to on if and when any one of the rooms goes back on
+      } else if (loungeBtn.children[1].classList.contains('hiding') || brBtn.children[1].classList.contains('hiding')){
+        slider.setAttribute('style', 'background-color: rgb(255, 0, 0, 0.4)');
+        if (houseBtn.children[0].classList.contains('hiding')){
+          for (i=0; i < 2; i++){
+            houseBtn.children[i].classList.toggle('hiding');
+          }
+        }
       }
     }
+
 
   </script>
 
